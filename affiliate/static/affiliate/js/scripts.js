@@ -6,7 +6,7 @@ bg.style.top = -480 + "px";
 const positions = [];
 
 root.addEventListener("mousemove", e => {
-  var y = -(e.pageY + bg.offsetTop)/10;
+  var y = -(e.pageY + bg.offsetTop)/40;
   positions.push({y});
   if (positions.length > 2)
     positions.splice(0, 1);
