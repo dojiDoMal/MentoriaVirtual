@@ -64,10 +64,16 @@
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <div class="col mb-5">
                         <div class="card h-100">
+                            <!-- Sale badge-->
+                            <a class="position-absolute text-decoration-none" style="top: 0.5rem; right: 0.5rem">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="add-to-cart bi bi-suit-heart-fill" viewBox="0 0 16 16">
+                                    <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                                </svg>
+                            </a>
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="{% static 'affiliate/images/card1.jpg'%}" alt="..." />
                             <!-- Product details-->
-                            <div class="card-body p-4">
+                            <div class="card-body p-4 bg-grey">
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Fancy Product</h5>
@@ -76,19 +82,25 @@
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-grey">
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto mb-auto" href="#"><i class="bi bi-cart3"></i> Adicionar ao carrinho</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <a class="position-absolute text-decoration-none" style="top: 0.5rem; right: 0.5rem">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="add-to-cart bi bi-suit-heart-fill" viewBox="0 0 16 16">
+                                    <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                                </svg>
+                            </a>
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="{% static 'affiliate/images/card2.jpg'%}" alt="..." />
                             <!-- Product details-->
-                            <div class="card-body p-4">
+                            <div class="card-body p-4 bg-grey">
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Special Item</h5>
@@ -106,19 +118,25 @@
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-grey">
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto mb-auto" href="#"><i class="bi bi-cart3"></i> Adicionar ao carrinho</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <a class="position-absolute text-decoration-none" style="top: 0.5rem; right: 0.5rem">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="add-to-cart bi bi-suit-heart-fill" viewBox="0 0 16 16">
+                                    <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                                </svg>
+                            </a>
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="{% static 'affiliate/images/card3.jpg'%}" alt="..." />
                             <!-- Product details-->
-                            <div class="card-body p-4">
+                            <div class="card-body p-4 bg-grey">
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Sale Item</h5>
@@ -128,17 +146,25 @@
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-grey">
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto mb-auto" href="#"><i class="bi bi-cart3"></i> Adicionar ao carrinho</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
+                            <!-- Sale badge-->
+                            <a class="position-absolute text-decoration-none" style="top: 0.5rem; right: 0.5rem">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="add-to-cart bi bi-suit-heart-fill" viewBox="0 0 16 16">
+                                    <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                                </svg>
+                            </a>
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="{% static 'affiliate/images/card4.jpg'%}" alt="..." />
                             <!-- Product details-->
-                            <div class="card-body p-4">
+                            <div class="card-body p-4 bg-grey">
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Popular Item</h5>
@@ -155,19 +181,25 @@
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-grey">
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto mb-auto" href="#"><i class="bi bi-cart3"></i> Adicionar ao carrinho</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <a class="position-absolute text-decoration-none" style="top: 0.5rem; right: 0.5rem">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="add-to-cart bi bi-suit-heart-fill" viewBox="0 0 16 16">
+                                    <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                                </svg>
+                            </a>
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="{% static 'affiliate/images/card5.jpg'%}" alt="..." />
                             <!-- Product details-->
-                            <div class="card-body p-4">
+                            <div class="card-body p-4 bg-grey">
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Sale Item</h5>
@@ -177,17 +209,25 @@
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-grey">
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto mb-auto" href="#"><i class="bi bi-cart3"></i> Adicionar ao carrinho</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
+                            <!-- Sale badge-->
+                            <a class="position-absolute text-decoration-none" style="top: 0.5rem; right: 0.5rem">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="add-to-cart bi bi-suit-heart-fill" viewBox="0 0 16 16">
+                                    <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                                </svg>
+                            </a>
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="{% static 'affiliate/images/card6.jpg'%}" alt="..." />
                             <!-- Product details-->
-                            <div class="card-body p-4">
+                            <div class="card-body p-4 bg-grey">
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Fancy Product</h5>
@@ -196,19 +236,25 @@
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-grey">
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto mb-auto" href="#"><i class="bi bi-cart3"></i> Adicionar ao carrinho</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
-                            <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
+                            <a class="position-absolute text-decoration-none" style="top: 0.5rem; right: 0.5rem">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="add-to-cart bi bi-suit-heart-fill" viewBox="0 0 16 16">
+                                    <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                                </svg>
+                            </a>
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="{% static 'affiliate/images/card7.jpg'%}" alt="..." />
                             <!-- Product details-->
-                            <div class="card-body p-4">
+                            <div class="card-body p-4 bg-grey">
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Special Item</h5>
@@ -226,17 +272,25 @@
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-grey">
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto mb-auto" href="#"><i class="bi bi-cart3"></i> Adicionar ao carrinho</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col mb-5">
                         <div class="card h-100">
+                            <!-- Sale badge-->
+                            <a class="position-absolute text-decoration-none" style="top: 0.5rem; right: 0.5rem">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="add-to-cart bi bi-suit-heart-fill" viewBox="0 0 16 16">
+                                    <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+                                </svg>
+                            </a>
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="{% static 'affiliate/images/card8.jpg'%}" alt="..." />
                             <!-- Product details-->
-                            <div class="card-body p-4">
+                            <div class="card-body p-4 bg-grey">
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h5 class="fw-bolder">Popular Item</h5>
@@ -253,8 +307,10 @@
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-grey">
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto mb-auto" href="#"><i class="bi bi-cart3"></i> Adicionar ao carrinho</a>
+                                </div>
                             </div>
                         </div>
                     </div>
