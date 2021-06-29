@@ -1,47 +1,84 @@
+:root {
+	--bs-blue: #0d6efd;
+	--bs-indigo: #6610f2;
+	--bs-purple: #6f42c1;
+	--bs-pink: #d63384;
+	--bs-red: #dc3545;
+	--bs-orange: #fd7e14;
+	--bs-yellow: #ffc107;
+	--bs-green: #198754;
+	--bs-teal: #20c997;
+	--bs-cyan: #0dcaf0;
+	--bs-white: #fff;
+	--bs-gray: #6c757d;
+	--bs-gray-dark: #343a40;
+	--bs-primary: #0d6efd;
+	--bs-secondary: #6c757d;
+	--bs-success: #198754;
+	--bs-info: #0dcaf0;
+	--bs-warning: #ffc107;
+	--bs-danger: #dc3545;
+	--bs-light: #f8f9fa;
+	--bs-dark: #212529;
+	--bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	--bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  }
+
 body {
-	background: #dfe7e9;
-	font-family: 'Roboto', sans-serif;
+	background: rgba(0,0,0,0.03);
+	font-family: var(--bs-font-sans-serif);
 }
-.form-control {
+
+.form-control, .btn {
+  	text-decoration: none;
+  	vertical-align: middle;
+  	background-color: white;
+	box-shadow: none;
+  	border: 1px solid #212529;
+  	border-radius: 0.25rem;
+  	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 	font-size: 16px;
 	transition: all 0.4s;
-	box-shadow: none;
 }
+
 .form-control:focus {
-	border-color: #5cb85c;
+	border-color: var(--bs-gray-dark);
 }
-.form-control, .btn {
-	border-radius: 50px;
-	outline: none !important;
-}
+
 .signup-form {
 	width: 480px;
 	margin: 0 auto;
 	padding: 30px 0;
 }
+
 .signup-form form {
 	border-radius: 5px;
-	margin-bottom: 20px;
 	background: #fff;
 	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 	padding: 40px;
 }
+
 .signup-form a {
-	color: #5cb85c;
+	color: var(--bs-blue);
 }    
+
 .signup-form h2 {
 	text-align: center;
 	font-size: 34px;
 	margin: 10px 0 15px;
 }
+
 .signup-form .hint-text {
 	color: #999;
 	text-align: center;
 	margin-bottom: 20px;
 }
+
 .signup-form .form-group {
 	margin-bottom: 20px;
 }
+
 .signup-form .btn {        
 	font-size: 18px;
 	line-height: 26px;
@@ -50,18 +87,22 @@ body {
 }
 .signup-btn {
 	text-align: center;
+	background: #5cb85c;
 	border-color: #5cb85c;
 	transition: all 0.4s;
 }
+
 .signup-btn:hover {
-	background: #5cb85c;
 	opacity: 0.8;
 }
+
 .or-seperator {
+
 	margin: 50px 0 15px;
 	text-align: center;
 	border-top: 1px solid #e0e0e0;
 }
+
 .or-seperator b {
 	padding: 0 10px;
 	width: 40px;
@@ -72,35 +113,45 @@ body {
 	background: #fff;
 	display: inline-block;
 	border: 1px solid #e0e0e0;
-	border-radius: 50%;
+	border-radius: 0.25rem;
 	position: relative;
 	top: -22px;
 	z-index: 1;
 }
+
 .social-btn .btn {
+	box-shadow: none;
+  	border: 1px solid #dc3545;
+  	border-radius: 0.25rem;
+	text-decoration: none;
+  	vertical-align: middle;
 	color: #fff;
 	margin: 10px 0 0 15px;
-	font-size: 15px;
-	border-radius: 50px;
+	font-size: 16px;
 	font-weight: normal;
-	border: none;
 	transition: all 0.4s;
-}	
+}
+
 .social-btn .btn:first-child {
 	margin-left: 0rem;
 }
+
 .social-btn .btn:hover {
 	opacity: 0.8;
 }
+
 .social-btn .btn-primary {
 	background: #507cc0;
 }
+
 .social-btn .btn-info {
 	background: #64ccf1;
 }
+
 .social-btn .btn-danger {
 	background: #df4930;
 }
+
 .social-btn .btn i {
 	float: left;
 	font-size: 20px;
@@ -108,4 +159,8 @@ body {
 
 .asteriskField {
     display: none;
+}
+
+div#account-login{
+	margin-top: 10px;
 }
