@@ -161,6 +161,13 @@ body {
     display: none;
 }
 
-div#account-login{
-	margin-top: 10px;
+.hcaptcha {
+	margin-top: -0.8rem;
 }
+
+/*todo: ajustar esses valores
+div#account-login{
+	margin-top: 0rem;
+	margin-bottom: -1rem;
+}
+

@@ -6,8 +6,8 @@ staticfiles
 .DS_Store
 *bkp*
 _config.yml
+.env
 #myvenv
-#.env
 #locale/*/LC_MESSAGES/django.mo
 #/media
 #bin/
