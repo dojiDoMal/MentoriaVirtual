@@ -128,6 +128,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = [
+    BASE_DIR / 'media',
+]
+MEDIA_URL = '/media/'
+
 STATICFILES_DIRS = [
     BASE_DIR / 'affiliate/static',
 ]
@@ -140,6 +146,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'home'
+LOGIN_URL = 'login'
 
+# Chaves secretas da API hCaptcha
 #HCAPTCHA_SITEKEY = os.environ.get("HCAPTCHA_SITEKEY")
 #HCAPTCHA_SECRET = os.environ.get("HCAPTCHA_SECRET")
