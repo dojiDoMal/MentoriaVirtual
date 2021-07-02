@@ -38,7 +38,7 @@ class Course(models.Model):
     description = models.TextField(max_length=2500, null=True)
     summary = models.TextField(max_length=140, null=True, blank=False)
     rating = models.FloatField(default=0)
-    price = models.FloatField(default=0)
+    price = models.DecimalField(default=0, max_digits=6, decimal_places=2)
     category = models.ForeignKey('Category', models.SET_NULL, null=True)    
     author = models.CharField(max_length=100)
         
