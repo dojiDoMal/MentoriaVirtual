@@ -7,9 +7,9 @@ staticfiles
 *bkp*
 _config.yml
 .env
+/media
 #myvenv
 #locale/*/LC_MESSAGES/django.mo
-#/media
 #bin/
 #include/
 #pip-selfcheck.json
