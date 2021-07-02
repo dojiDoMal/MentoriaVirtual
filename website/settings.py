@@ -34,17 +34,16 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = [ 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'affiliate.apps.AffiliateConfig',
     'hcaptcha',
     'crispy_forms',
-    'affiliate.apps.AffiliateConfig',
-    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -81,10 +80,15 @@ WSGI_APPLICATION = 'website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# Colocar esses dados no .env
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mentoria',
+        'USER': 'ander',
+        'PASSWORD': '12345',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -106,9 +110,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-# Custom Authentication with EMAIL instead of USERNAME
-AUTHENTICATION_BACKENDS = ['website.email_backend.EmailBackend']
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -143,11 +144,10 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Talvez nao precise mais
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_REDIRECT_URL = 'home'
-LOGIN_URL = 'login'
-
+# Talvez nao precise mais
 # Chaves secretas da API hCaptcha
 #HCAPTCHA_SITEKEY = os.environ.get("HCAPTCHA_SITEKEY")
 #HCAPTCHA_SECRET = os.environ.get("HCAPTCHA_SECRET")

@@ -79,10 +79,15 @@
   padding: 0.1rem 0.3rem;
   border-radius: 0.25rem;
 }
+
 .favorite:hover{
   background-color: #ff3c2e;
   color: white;
   border: 1px solid #ff3c2e;
+}
+
+.is-disabled {
+  pointer-events: none;
 }
 
 body {
