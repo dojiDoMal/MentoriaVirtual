@@ -41,6 +41,7 @@ class Course(models.Model):
     price = models.DecimalField(default=0, max_digits=6, decimal_places=2)
     category = models.ForeignKey('Category', models.SET_NULL, null=True)    
     author = models.CharField(max_length=100)
+    link = models.URLField(max_length=200, default='#')
         
     def count_popular_vote(self, like_boolean):
         return self.popular_vote_set.filter(like=like_boolean).count()
