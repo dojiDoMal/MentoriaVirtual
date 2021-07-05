@@ -12,3 +12,11 @@ def detail(request, pk):
     data["name"] = course.name
     # Adicionar mais dados
     return render(request, 'course-detail.html', data)
+
+def search_courses(request):
+    if(request.method == 'POST'):
+        searched = request.POST['searched']
+        courses = Course.objects.filter(name__contains=searched)
+        return render(request, 'search-courses.html', {'searched':searched, 'courses':courses})
+    else:
+        return render(request, 'search-courses.html', {})

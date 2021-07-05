@@ -1,0 +1,17 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block content %}
+    <center>
+    {% if searched %}
+        <h1> Você pesquisou por {{ searched }}</h1>
+        <!-- Consertar bug que não exibe os cursos -->
+        {% for course in courses %}
+        <br/>
+            <h2> {{ course }} </h2> 
+        {% endfor %}
+    {% else %}
+        <h1> Você não passou o parametro de busca...</h1>
+    {% endif %}        
+    <center>
+{% endblock content %}

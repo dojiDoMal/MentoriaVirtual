@@ -21,9 +21,22 @@
                 </div>
             </div>
         </header>
+        <!-- Search Bar -->
+        <form class="form-inline d-flex justify-content-center" method="POST" action="{% url 'search' %}">
+        {% csrf_token %}
+            <div class="row mt-3">
+                <div class="col-9">
+                    <input name="searched" class="form-control" type="search" placeholder="O que você deseja aprender?" aria-label="Search">
+                </div>
+                <div class="col">
+                    <button class="btn btn-outline-dark" type="submit">Buscar</button>
+                </div>
+            </div>
+        </form>
+        <hr>
         <!-- Section-->
         <section class="py-5">
-            <div class="container px-4 px-lg-5 mt-5">
+            <div class="container px-4 px-lg-5 ">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                         {% for course in courses %}
                         <div class="col mb-5">
@@ -42,7 +55,7 @@
                             <div class="card-body p-4 bg-grey">
                                 <div class="text-center">
                                     <!-- Course name-->
-                                    <h5 class="fw-bolder">{{ course.name }}</h5>
+                                    <a href="{% url 'detail' course.id %}" class="fw-bolder">{{ course.name }}</a>
                                     <!-- Course price-->
                                     {{ course.price }}
                                 </div>
