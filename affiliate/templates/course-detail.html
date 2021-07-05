@@ -2,58 +2,103 @@
 {% load static %}
 
 {% block content %}
-<div class="container-fluid">
-    <div class="content-wrapper">	
-		<div class="item-container">	
-			<div class="container">	
-				<div class="col-md-12">
-					<div class="product col-md-3 service-image-left">
-                    
-						<center>
-							<img id="item-display" src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt=""></img>
-						</center>
+<section class="py-5 px-5" style="border-outline: none">
+	<div class="container px-4 px-lg-5 ">
+		<div class="row product gx-4 gx-lg-5 justify-content">
+			<div class="card col-md-3 h-100" style="border: none">
+				<img class="card-img" src="{{ course.image.url }}" alt=""></img>
+			</div>
+			<div class="col-md-9 p-4">
+				<div class="h5 text-dark fw-bolder"> 
+					{{ course.name }}<hr>
+				</div>
+				<div class="h6 text-dark "> 
+					{{ course.summary }}
+				</div>
+				<div class="row py-3">
+					<div class="col-2">
+						<div class="progress" style="position: absolute"> 
+							<div class="progress-bar progress-bar-secondary" role="progressbar" style="width: 100%;" aria-valuemin="0" aria-valuemax="100">
+							</div>	
+						</div>
+						<div class="progress"> 
+							<div class="progress-bar" role="progressbar" style="width: {{course.get_rating}}%;" aria-valuemin="0" aria-valuemax="100">
+							</div>	
+						</div> 
 					</div>
-					
-					<div class="container service1-items col-sm-2 col-md-2 pull-left">
-						<center>
-							<a id="item-1" class="service1-item">
-								<img src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt=""></img>
-							</a>
-							<a id="item-2" class="service1-item">
-								<img src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt=""></img>
-							</a>
-							<a id="item-3" class="service1-item">
-								<img src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt=""></img>
-							</a>
-						</center>
+					<div class="col my-1 mx-3">
+						{{course.rating}}/10
 					</div>
 				</div>
-					
-				<div class="col-md-7">
-					<div class="product-title">{{ course.name }}</div>
-					<div class="product-desc">The Corsair Gaming Series GS600 is the ideal price/performance choice for mid-spec gaming PC</div>
-					<div class="product-rating"><i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star gold"></i> <i class="fa fa-star-o"></i> </div>
-					<hr>
-					<div class="product-price">$ 1234.00</div>
-					<div class="product-stock">In Stock</div>
-					<hr>
-					<div class="btn-group cart">
-						<button type="button" class="btn btn-success">
-							Add to cart 
-						</button>
+				<hr>
+				<div class="row text-end me-5 py-3">
+					<div class="col-10">
+						<!-- Course price-->
+                        {% if course.discount == 0 %}
+                            <div class="display-8 my-3 pt-1">
+                                R$ {{ course.price }}
+                            </div>
+                        {% else %}
+						<div class="mt-2">
+                            <span class="display-9 text-decoration-line-through text-secondary">
+                                R$ {{ course.price }} 
+                            </span> 
+                            </br>
+                            <span class="display-8">
+                                R$ {{ course.get_price_with_discount }}
+                            </span>
+						</div>
+                        {% endif %}
 					</div>
-					<div class="btn-group wishlist">
-						<button type="button" class="btn btn-danger">
-							Add to wishlist 
-						</button>
+					<div class="col">
+						<a class="btn btn-outline-dark mt-auto mb-auto" href="{{ course.link }}" target="_blank"><i class="bi bi-cart3"></i> Comprar</a>
 					</div>
 				</div>
-			</div> 
+			</div>
 		</div>
+	</div>
+</section>
+
+{% comment %} 
+caso eu adiciona mais imagens de curso, vou usar esse bloco
+<div class="container service1-items col-sm-2 col-md-2 pull-left">
+	<center>
+		<a id="item-1" class="service1-item">
+			<img src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt=""></img>
+		</a>
+		<a id="item-2" class="service1-item">
+			<img src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt=""></img>
+		</a>
+		<a id="item-3" class="service1-item">
+			<img src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt=""></img>
+		</a>
+	</center>
+</div> 
+{% endcomment %}
+<section class="py-5 px-5" style="border-outline: none">
+	<div class="container px-4 px-lg-5 ">
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Descrição</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Informações</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Avaliações</a>
+			</li>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">Hello</div>
+				<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">Dear</div>
+				<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Friedns</div>
+			</div>
+	</div>
+</section>
+
 		<div class="container-fluid">		
 			<div class="col-md-12 product-info">
 					<ul id="myTab" class="nav nav-tabs nav_tabs">
-						
 						<li class="active"><a href="#service-one" data-toggle="tab">DESCRIPTION</a></li>
 						<li><a href="#service-two" data-toggle="tab">PRODUCT INFO</a></li>
 						<li><a href="#service-three" data-toggle="tab">REVIEWS</a></li>

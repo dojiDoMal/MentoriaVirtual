@@ -4299,17 +4299,19 @@ textarea.form-control-lg {
   color: #fff;
 }
 .navbar-dark .navbar-nav .nav-link {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.95);
 }
 .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
   color: rgba(255, 255, 255, 0.75);
+  border-left: 1px solid currentColor;
 }
 .navbar-dark .navbar-nav .nav-link.disabled {
   color: rgba(255, 255, 255, 0.25);
 }
 .navbar-dark .navbar-nav .show > .nav-link,
 .navbar-dark .navbar-nav .nav-link.active {
-  color: #fff;
+  /*color: #fff;*/
+  color: rgba(255, 255, 255, 0.7);  
 }
 .navbar-dark .navbar-toggler {
   color: rgba(255, 255, 255, 0.55);
@@ -4840,13 +4842,13 @@ textarea.form-control-lg {
     background-position-x: 1rem;
   }
 }
+
 .progress {
   display: flex;
-  height: 1rem;
+  height: 2rem;
+  width: 10rem;
   overflow: hidden;
   font-size: 0.75rem;
-  background-color: #e9ecef;
-  border-radius: 0.25rem;
 }
 
 .progress-bar {
@@ -4855,9 +4857,11 @@ textarea.form-control-lg {
   justify-content: center;
   overflow: hidden;
   color: #fff;
+  background-size: cover;
   text-align: center;
   white-space: nowrap;
-  background-color: #0d6efd;
+  background-image: url("../images/stars.png");
+  background-color: var(--bs-yellow);
   transition: width 0.6s ease;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -4880,6 +4884,12 @@ textarea.form-control-lg {
     -webkit-animation: none;
             animation: none;
   }
+}
+
+.progress-bar-secondary {
+  z-index: -1;
+  opacity: 0.5;
+  filter: alpha(opacity=20);
 }
 
 .list-group {

@@ -65,5 +65,8 @@ class Course(models.Model):
     def get_price_with_discount(self):
         price = float(self.price) * (1-(self.discount/100))
         return "{:.2f}".format(price).replace(".",",") 
+    
+    def get_rating(self):
+        return int(self.rating*10)
 
 # Create your models here.
