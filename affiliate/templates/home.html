@@ -4,7 +4,6 @@
 
 {% comment %} 
     -Modificar layout da página para inserir: 
-    -Caixa de busca de cursos
     -Filtro de cursos (forma de organizar)
     -...
 
@@ -38,6 +37,7 @@
         <section class="py-5">
             <div class="container px-4 px-lg-5 ">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                        {% comment %} {{ courses|length }} cursos {% endcomment %}
                         {% for course in courses %}
                         <div class="col mb-5">
                             <div class="card h-100">
@@ -55,9 +55,22 @@
                             <div class="card-body p-4 bg-grey">
                                 <div class="text-center">
                                     <!-- Course name-->
-                                    <a href="{% url 'detail' course.id %}" class="fw-bolder">{{ course.name }}</a>
+                                    <a href="{% url 'detail' course.id %}" class="h5 text-dark nav-link fw-bolder">{{ course.name|title }}</a>
+                                    <p class="text-secondary"> {{ course.summary }}</p>
                                     <!-- Course price-->
-                                    {{ course.price }}
+                                    {% if course.discount == 0 %}
+                                        <span class="display-8">
+                                            R$ {{ course.price }}
+                                        </span>
+                                    {% else %}
+                                        <span class="display-9 text-decoration-line-through text-secondary">
+                                            R$ {{ course.price }} 
+                                        </span> 
+                                        </br>
+                                        <span class="display-8">
+                                            R$ {{ course.get_price_with_discount }}
+                                        </span>
+                                    {% endif %}
                                 </div>
                             </div>
                             <!-- Course actions-->

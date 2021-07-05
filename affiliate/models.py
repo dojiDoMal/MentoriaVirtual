@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.db.models.fields import DecimalField
 # from mptt.models import MPTTModel, TreeForeignKey
 
 # class Comment(MPTTModel):
@@ -33,6 +34,7 @@ class Category(models.Model):
         return self.name
 
 class Course(models.Model):
+    # transformar o desconto em um field?
     name = models.CharField(max_length=200)
     image = models.ImageField(upload_to='courses/')
     description = models.TextField(max_length=2500, null=True)
@@ -42,6 +44,7 @@ class Course(models.Model):
     category = models.ForeignKey('Category', models.SET_NULL, null=True)    
     author = models.CharField(max_length=100)
     link = models.URLField(max_length=200, default='#')
+    discount = models.IntegerField(default=0)
         
     def count_popular_vote(self, like_boolean):
         return self.popular_vote_set.filter(like=like_boolean).count()
@@ -59,9 +62,8 @@ class Course(models.Model):
         sum = self.count_likes() + self.count_dislikes()
         return self.count_likes()/sum*100 if sum > 0 else 0
 
-    def get_price_with_discount(self, discount):
-        # discount is on the format (10)%, (xx)%
-        return self.price * (1-(discount/100))
+    def get_price_with_discount(self):
+        price = float(self.price) * (1-(self.discount/100))
+        return "{:.2f}".format(price).replace(".",",") 
 
-# Adicionar modelo para os cursos
 # Create your models here.
