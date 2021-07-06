@@ -1,6 +1,6 @@
 const root = document.querySelector(".root");
 const bg = document.querySelector(".background");
-const homeTab = document.querySelector("#home-tab");
+const descriptionTab = document.querySelector("#description-tab");
 const profileTab = document.querySelector("#profile-tab");
 const contactTab = document.querySelector("#contact-tab");
 const positions = [];
@@ -24,11 +24,11 @@ if(root){
 }
 
 
-homeTab.addEventListener("click", e => {
+descriptionTab.addEventListener("click", e => {
   e.preventDefault();
-  activate(homeTab, profileTab, contactTab);
+  activate(descriptionTab, profileTab, contactTab);
   activateAndShow(
-    document.querySelector('#home'),
+    document.querySelector('#description'),
     document.querySelector("#profile"),
     document.querySelector("#contact"),
   )
@@ -36,21 +36,21 @@ homeTab.addEventListener("click", e => {
 
 profileTab.addEventListener("click", e => {
   e.preventDefault();
-  activate(profileTab, homeTab, contactTab);
+  activate(profileTab, descriptionTab, contactTab);
   activateAndShow(
     document.querySelector("#profile"),
-    document.querySelector('#home'),
+    document.querySelector('#description'),
     document.querySelector("#contact"),
   )
 })
 
 contactTab.addEventListener("click", e=> {
   e.preventDefault();
-  activate(contactTab, homeTab, profileTab);
+  activate(contactTab, descriptionTab, profileTab);
   activateAndShow(
     document.querySelector("#contact"),
     document.querySelector("#profile"),
-    document.querySelector('#home'),
+    document.querySelector('#description'),
   )
 })
 

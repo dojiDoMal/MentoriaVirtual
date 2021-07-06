@@ -41,7 +41,8 @@ class Course(models.Model):
     summary = models.TextField(max_length=140, null=True, blank=False)
     rating = models.FloatField(default=0)
     price = models.DecimalField(default=0, max_digits=6, decimal_places=2)
-    category = models.ForeignKey('Category', models.SET_NULL, null=True)    
+    category = models.ForeignKey('Category', models.SET_NULL, null=True)   
+    # colocar relacionamento CourseEvaluation 
     author = models.CharField(max_length=100)
     link = models.URLField(max_length=200, default='#')
     discount = models.IntegerField(default=0)
@@ -67,6 +68,11 @@ class Course(models.Model):
         return "{:.2f}".format(price).replace(".",",") 
     
     def get_rating(self):
-        return int(self.rating*10)
+        return int(self.rating*20)
+
+class CourseEvaluation(models.Model):
+    course = models.ForeignKey('Course', on_delete=models.CASCADE)
+    raw_evaluation = models.TextField()
+    evaluation_rating = models.IntegerField(default=0)
 
 # Create your models here.

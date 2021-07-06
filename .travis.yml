@@ -6,11 +6,6 @@ services:
 install:
   - pip install -r requirements.txt
 env:
-    - SECRET_KEY=django-insecure-ulbj$gftpj!c-z%93g9j4r+yi+#3pc=f#^y!m79jvl1+17$r-4
-    - DATABASE_NAME=mentoria
-    - DATABASE_USER=ander
-    - DATABASE_PASSWORD=12345
-    - DATABASE_HOST=localhost
-    - DATABASE_PORT=5432
+  - SECRET_KEY='django-insecure-ulbj$gftpj!c-z%93g9j4r+yi+#3pc=f#^y!m79jvl1+17$r-4'
 script:
   - python manage.py test
