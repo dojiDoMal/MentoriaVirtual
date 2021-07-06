@@ -4848,7 +4848,6 @@ textarea.form-control-lg {
   height: 2rem;
   width: 10rem;
   overflow: hidden;
-  font-size: 0.75rem;
 }
 
 .progress-bar {
@@ -4870,6 +4869,10 @@ textarea.form-control-lg {
   }
 }
 
+.progress-bar-alt {
+  background-image: url("../images/starsgrey.png");
+}
+
 .progress-bar-striped {
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-size: 1rem 1rem;
@@ -4887,9 +4890,7 @@ textarea.form-control-lg {
 }
 
 .progress-bar-secondary {
-  z-index: -1;
   opacity: 0.5;
-  filter: alpha(opacity=20);
 }
 
 .list-group {

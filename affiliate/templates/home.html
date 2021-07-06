@@ -33,56 +33,5 @@
             </div>
         </form>
         <hr>
-        <!-- Section-->
-        <section class="py-5">
-            <div class="container px-4 px-lg-5 ">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                        {% comment %} {{ courses|length }} cursos {% endcomment %}
-                        {% for course in courses %}
-                        <div class="col mb-5">
-                            <div class="card h-100">
-                            {% comment %} 
-                            <!-- Favorite button-->
-                            <a class="position-absolute text-decoration-none" style="top: 0.5rem; right: 0.5rem">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="favorite bi bi-suit-heart-fill" viewBox="0 0 16 16">
-                                    <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
-                                </svg>
-                            </a> 
-                            {% endcomment %}
-                            <!-- Course image-->
-                            <img class="card-img-top" src="{{ course.image.url }}" alt="..." />
-                            <!-- Course details-->
-                            <div class="card-body p-4 bg-grey">
-                                <div class="text-center">
-                                    <!-- Course name-->
-                                    <a href="{% url 'detail' course.id %}" class="h5 text-dark nav-link fw-bolder">{{ course.name|title }}</a>
-                                    <p class="text-secondary"> {{ course.summary }}</p>
-                                    <!-- Course price-->
-                                    {% if course.discount == 0 %}
-                                        <span class="display-8">
-                                            R$ {{ course.price }}
-                                        </span>
-                                    {% else %}
-                                        <span class="display-9 text-decoration-line-through text-secondary">
-                                            R$ {{ course.price }} 
-                                        </span> 
-                                        </br>
-                                        <span class="display-8">
-                                            R$ {{ course.get_price_with_discount }}
-                                        </span>
-                                    {% endif %}
-                                </div>
-                            </div>
-                            <!-- Course actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-grey">
-                                <div class="text-center">
-                                    <a class="btn btn-outline-dark mt-auto mb-auto" href="{{ course.link }}" target="_blank"><i class="bi bi-cart3"></i> Comprar</a>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                </div>
-            </div>
-        </section>
+        {% include 'card.html' %}
 {% endblock content %}
