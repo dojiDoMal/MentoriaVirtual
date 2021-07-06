@@ -2,25 +2,15 @@ language: python
 python:
   - "3.8"
 services:
-  - mysql
-before_install:
-  - mysql -e 'CREATE DATABASE IF NOT EXISTS test;'
-  - test "$DB" = "sqlite" && echo "DATABASE_URL=sqlite:///db.sqlite3" > .env || echo "noop"
+  - postgresql
 install:
   - pip install -r requirements.txt
 env:
-  global:
-    - DEBUG=True
-    - DJANGO_SETTINGS_MODULE=ideax.settings.test
-    - SECRET_KEY=12345678901234567890123456789012345678901234567890
-    - GENERAL_USER_GROUP=General
-    - ALLOWED_HOSTS=.localhost
-    - DATABASE_NAME=database
-    - DATABASE_USER=user
-    - DATABASE_PASSWORD=password
-    - DATABASE_HOST=host
+    - SECRET_KEY=django-insecure-ulbj$gftpj!c-z%93g9j4r+yi+#3pc=f#^y!m79jvl1+17$r-4
+    - DATABASE_NAME=mentoria
+    - DATABASE_USER=ander
+    - DATABASE_PASSWORD=12345
+    - DATABASE_HOST=localhost
     - DATABASE_PORT=5432
-  matrix:
-    - DB=sqlite
 script:
-  - make ci
+  - python manage.py test
