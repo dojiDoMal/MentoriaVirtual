@@ -2,13 +2,6 @@
 {% extends 'navbar.html' %}
 {% load static %}
 
-{% comment %} 
-    -Modificar layout da página para inserir: 
-    -Filtro de cursos (forma de organizar)
-    -...
-
-{% endcomment %}
-
 {% block content %}
         <header class="bg-dark py root">
             <img class="background" src="{% static 'affiliate/images/study.jpg' %}"/>
@@ -20,18 +13,26 @@
                 </div>
             </div>
         </header>
-        <!-- Search Bar -->
-        <form class="form-inline d-flex justify-content-center" method="POST" action="{% url 'search' %}">
+        
+        <form method="POST" action="{% url 'search' %}">
         {% csrf_token %}
-            <div class="row mt-3">
-                <div class="col-9">
-                    <input name="searched" class="form-control" type="search" placeholder="O que você deseja aprender?" aria-label="Search">
+        <div class="container">
+            <div class="form-row">
+                <div class="col-4">
                 </div>
-                <div class="col">
-                    <button class="btn btn-outline-dark" type="submit">Buscar</button>
+                <div class="form-group col-4 pt-4">
+                    <input name="searched" class="form-control" type="search" placeholder="O que você deseja aprender?" aria-label="Search">
+                    
+                </div>
+                <div class="form-group col-1 pt-4">
+                    <button class="btn btn-dark" type="submit">Buscar</button>
                 </div>
             </div>
-        </form>
+        </div>
+        </form>   
+
         <hr>
-        {% include 'card.html' %}
+
+        {% include 'filter.html' %}
+        {% include 'card.html' %} 
 {% endblock content %}

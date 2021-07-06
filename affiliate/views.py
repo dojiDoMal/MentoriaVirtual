@@ -1,9 +1,18 @@
 from django.shortcuts import get_object_or_404, render
 from .models import Course
+from .filters import CourseFilter
 
 def home(request):
     courses = Course.objects.all()
-    return render(request, 'home.html', {"courses": courses})
+
+    #orders = courses.order_set.all()
+    #order_count = orders.count()
+
+    filter = CourseFilter(request.GET, queryset=courses)
+    courses = filter.qs
+
+    context = {"courses": courses, 'filter': filter}
+    return render(request, 'home.html', context)
 
 def detail(request, pk):
     course = get_object_or_404(Course, pk=pk)

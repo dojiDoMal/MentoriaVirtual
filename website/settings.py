@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'hcaptcha',
     'crispy_forms',
     'mptt',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
