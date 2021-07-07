@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from .models import Course
+from .models import Course, Category
 from .filters import CourseFilter
 
 def home(request):
@@ -36,3 +36,12 @@ def search_courses(request):
         return render(request, 'search-courses.html', {"searched":searched, "courses": courses})
     else:
         return render(request, 'search-courses.html', {})
+
+def about(request):
+    total_courses = Course.objects.all().count()  
+    total_categories = Category.objects.all().count()
+    context = {'courses':total_courses, 'categories':total_categories}
+    return render(request, 'about.html', context)
+
+def terms(request):
+    return render(request, 'terms.html', {})

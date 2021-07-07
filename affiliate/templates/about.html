@@ -1,0 +1,46 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block content %}
+<!-- TODO: Melhorar o css dessa página -->
+<section class="py-5 px-5">
+    <div class="container px-4 px-lg-5">
+        <h3 class='pb-5 text-center'>Contribuindo com o seu desenvolvimento pessoal por meio do aprendizado</h3>
+        
+        <h4>Conenctanto pessoas</h4>
+        <p>
+            Ao oferecer a possibilidade às pessoas com sede de aprender novas habilidades de escolher entre os melhores instrutores, 
+            a plataforma Mentoria Virtual está ajudando-as a alcançar suas metas, crescerem como seres humanos e ir atrás de conquistar seus sonhos.
+        </p>
+        <hr>
+        <h4>Ajudando a realizar sonhos</h4>
+        <p>
+            Acreditamos que o talento está presente dentro de cada um de nós, mas as oportunidades precisam ser criadas. Por isso oferecemos o acesso
+            aos recursos de aprendizado e ao ensino online, dessa forma, qualquer pessoa, em qualquer lugar, pode adquirir habilidades e realizar mudanças
+            significativas em sua vida.
+        </p>
+        <hr>
+        <h4>Nossos cursos</h4>
+        <p>
+            Os cursos que oferecemos são escolhidos levando em consideração critérios importantes, dentre eles os instrutores. Esses são escolhidos com base 
+            em um perfil específico de capacitação e paixão por compartilhar conhecimento e ajudar os alunos. Eles são especialistas que trabalham em suas 
+            áreas para oferecer o  conteúdo mais atualizado.
+        </p>
+        <hr>
+        <h4>Nosso objetivo</h4>
+        <p>
+            Nós da Mentoria Virtual queremos que você se torne uma pessoa melhor, para isso conectamos alunos de qualquer lugar aos melhores instrutores
+        </p>
+        <p>Atualmente temos {{ courses }} cursos</p>
+        <p>Com um total de {{ categories }} categorias diferentes</p>
+        <hr>
+        <h4>Nossa contribuição vai além</h4>
+        <p>
+            A Mentoria Virtual exerce um papel de alavancador de carreiras por ajudar as pessoas a se prepararem para um futuro do trabalho em constante 
+            mudança e evolução. Nossa seleção de cursos técnicos e de negócios oferece o poder de desenvolver conhecimento e satisfazer o desejo de 
+            aprendizado e crescimento individual, além de contribuir para geração de novos negócios.
+        </p>
+    </div>
+</section>
+
+{% endblock content %}
