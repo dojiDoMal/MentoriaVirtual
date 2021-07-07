@@ -2,7 +2,7 @@ const root = document.querySelector(".root");
 const bg = document.querySelector(".background");
 const descriptionTab = document.querySelector("#description-tab");
 const profileTab = document.querySelector("#profile-tab");
-const contactTab = document.querySelector("#contact-tab");
+const evaluationsTab = document.querySelector("#evaluations-tab");
 const positions = [];
 
 if(bg){
@@ -26,29 +26,29 @@ if(root){
 
 descriptionTab.addEventListener("click", e => {
   e.preventDefault();
-  activate(descriptionTab, profileTab, contactTab);
+  activate(descriptionTab, profileTab, evaluationsTab);
   activateAndShow(
     document.querySelector('#description'),
     document.querySelector("#profile"),
-    document.querySelector("#contact"),
+    document.querySelector("#evaluations"),
   )
 })
 
 profileTab.addEventListener("click", e => {
   e.preventDefault();
-  activate(profileTab, descriptionTab, contactTab);
+  activate(profileTab, descriptionTab, evaluationsTab);
   activateAndShow(
     document.querySelector("#profile"),
     document.querySelector('#description'),
-    document.querySelector("#contact"),
+    document.querySelector("#evaluations"),
   )
 })
 
-contactTab.addEventListener("click", e=> {
+evaluationsTab.addEventListener("click", e=> {
   e.preventDefault();
-  activate(contactTab, descriptionTab, profileTab);
+  activate(evaluationsTab, descriptionTab, profileTab);
   activateAndShow(
-    document.querySelector("#contact"),
+    document.querySelector("#evaluations"),
     document.querySelector("#profile"),
     document.querySelector('#description'),
   )

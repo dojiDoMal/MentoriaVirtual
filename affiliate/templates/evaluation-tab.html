@@ -1,0 +1,14 @@
+{% load static %}
+{% comment %} TODO: Melhorar o style desse template  {% endcomment %}
+{% block evaluation %}
+    {% if not course.evaluations.all %}
+        Sem Avaliações...
+    {% else %}
+        {% for comment in course.evaluations.all %}
+            <strong>{{ comment.evaluation_rating }}</strong> -
+            {{ comment.raw_evaluation }} - {{ comment.date_added }}
+            <br/>
+            <hr>
+        {% endfor %}
+    {% endif %}
+{% endblock evaluation %}

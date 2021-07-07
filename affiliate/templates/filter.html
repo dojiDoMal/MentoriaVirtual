@@ -1,6 +1,6 @@
 {% load static %}
 {% load crispy_forms_tags %}
-<!-- Tentar implementar crispy tag pra melhorar o form de filtro-->
+<!-- TODO: Tentar implementar crispy tag pra melhorar o form de filtro-->
 {% block filter %}
 <form method="GET">
 {% csrf_token %}
@@ -19,4 +19,4 @@
         </div>
     </div>
 </form>
-{% endblock filter%}
+{% endblock filter %}
