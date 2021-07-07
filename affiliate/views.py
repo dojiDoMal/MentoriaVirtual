@@ -45,3 +45,6 @@ def about(request):
 
 def terms(request):
     return render(request, 'terms.html', {})
+
+def glossary(request):
+    return render(request, 'glossary.html', {})
