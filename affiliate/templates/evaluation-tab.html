@@ -4,11 +4,36 @@
     {% if not course.evaluations.all %}
         Sem Avaliações...
     {% else %}
+    <div class='row'>
         {% for comment in course.evaluations.all %}
-            <strong>{{ comment.evaluation_rating }}</strong> -
-            {{ comment.raw_evaluation }} - {{ comment.date_added }}
+            <div class="col-1">
+            </div>
+            <div class="px-2 pt-1 my-3 col-4" style="height: 100%; border-radius:0.25rem; border: 1px solid #dddddd">  
+                <!-- <strong>{{ comment.evaluation_rating }}</strong> -->
+                <p class='mt-1 text-center' style="margin-right:19.5rem; border-radius:0.25rem;
+                            background-color:
+                        {% if comment.evaluation_rating < 3 %} 
+                            rgba(220,24,24,0.7); /*red*/
+                        {% elif comment.evaluation_rating == 3 %} 
+                            rgba(240,230,24,0.7); /*yellow*/
+                        {% else %}
+                            rgba(24,220,24,0.7); /*green*/
+                        {% endif%}
+                        ">
+                    <i class="bi bi-star-fill me-2"></i>
+                    {{ comment.evaluation_rating }}
+                </p>
+                <p style="overflow-wrap: break-word; word-wrap: break-word; hyphens: auto;">
+                    {{ comment.raw_evaluation }}
+                </p> 
+                <div class="display-9 pb-1 text-secondary">
+                    <em>{{ comment.date_added|date:"d/m/Y à\s H:i" }}</em>
+                </div>
+            </div>
+            <div class="col-1">
+            </div>
             <br/>
-            <hr>
         {% endfor %}
+    </div>
     {% endif %}
 {% endblock evaluation %}

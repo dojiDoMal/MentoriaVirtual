@@ -75,4 +75,6 @@ class Evaluation(models.Model):
     evaluation_rating = models.IntegerField(default=0)
     date_added = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering = ('-evaluation_rating',)
 # Create your models here.

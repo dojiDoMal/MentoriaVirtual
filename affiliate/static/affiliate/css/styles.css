@@ -11035,6 +11035,7 @@ textarea.form-control-lg {
 }
 
 .product{
+  border-radius: 0.25rem;
 	border: 1px solid #dddddd;
 	height: 321px;
 }
