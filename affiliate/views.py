@@ -48,3 +48,6 @@ def terms(request):
 
 def glossary(request):
     return render(request, 'glossary.html', {})
+
+def contact(request):
+    return render(request, 'contact.html', {})

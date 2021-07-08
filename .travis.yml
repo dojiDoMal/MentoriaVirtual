@@ -8,4 +8,4 @@ install:
 env:
   - SECRET_KEY='django-insecure-ulbj$gftpj!c-z%93g9j4r+yi+#3pc=f#^y!m79jvl1+17$r-4'
 script:
-  - python manage.py test
+  - python manage.py test affiliate

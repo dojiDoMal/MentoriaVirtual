@@ -49,6 +49,25 @@
   }
 }
 
+hr.style-one {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  background-image: linear-gradient(to right, #e0e0e0, #ccc, #e0e0e0);
+}
+hr.style-two {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  background-image: linear-gradient(to right, #fff, #ccc, #fff);
+}
+hr.style-three {
+  border: 0;
+  height: 1px;
+  background: #666;
+  background-image: linear-gradient(to right, #999, #666, #999);
+}
+
 .root {
   overflow: hidden;
   position: relative;
@@ -7592,16 +7611,32 @@ textarea.form-control-lg {
   background-color: #198754 !important;
 }
 
+.bg-success-secondary {
+  background-color: #5c9c6c !important;
+}
+
 .bg-info {
   background-color: #0dcaf0 !important;
+}
+
+.bg-info-secondary {
+  background-color: #6d8bcc !important;
 }
 
 .bg-warning {
   background-color: #ffc107 !important;
 }
 
+.bg-warning-secondary {
+  background-color: #b9b271 !important;
+}
+
 .bg-danger {
   background-color: #dc3545 !important;
+}
+
+.bg-danger-secondary {
+  background-color: #bb5c65 !important;
 }
 
 .bg-light {

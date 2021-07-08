@@ -28,9 +28,11 @@
                         {% url 'home' as home %}
                         {% url 'about' as about %}
                         {% url 'terms' as terms %}
+                        {% url 'contact' as contact%}
                         <li class="nav-item"><a class="nav-link {% if request.path == home %}active{% endif %}"  href="{% url 'home' %}">Home</a></li>
                         <li class="nav-item"><a class="nav-link {% if request.path == about %}active{% endif %}" href="{% url 'about' %}">Sobre</a></li>
                         <li class="nav-item"><a class="nav-link {% if request.path == terms %}active{% endif %}" href="{% url 'terms' %}">Termos</a></li>
+                        <li class="nav-item"><a class="nav-link {% if request.path == contact %}active{% endif %}" href="{% url 'contact' %}">Contato</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Cursos</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
