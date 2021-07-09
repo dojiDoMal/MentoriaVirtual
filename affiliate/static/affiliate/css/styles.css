@@ -50,22 +50,25 @@
 }
 
 hr.style-one {
+  opacity: 0.5;
   border: 0;
   height: 1px;
   background: #ccc;
-  background-image: linear-gradient(to right, #e0e0e0, #ccc, #e0e0e0);
+  background-image: linear-gradient(to right, white, #ccc, white);
 }
 hr.style-two {
+  opacity: 0.5;
   border: 0;
   height: 1px;
   background: #ccc;
   background-image: linear-gradient(to right, #fff, #ccc, #fff);
 }
 hr.style-three {
+  opacity: 0.5;
   border: 0;
   height: 1px;
-  background: #666;
-  background-image: linear-gradient(to right, #999, #666, #999);
+  background: #495057;
+  background-image: linear-gradient(to right, #333, #495057, #333);
 }
 
 .root {
