@@ -27,7 +27,7 @@
   --bs-primary: #0d6efd;
   --bs-secondary: #6c757d;
   --bs-success: #198754;
-  --bs-info: #0dcaf0;
+  --bs-info: ;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
@@ -11172,4 +11172,73 @@ textarea.form-control-lg {
 
 .service-image-left > center > img,.service-image-right > center > img{
 	max-height: 155px;
+}
+
+/* The container must be positioned relative: */
+.custom-select {
+  /* border-top: 1px solid #00000040; */
+  border-radius: 0.2rem;
+  width: 200px;
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 11px;
+  right: 10px;
+  width: 18px;
+  height: 16px;
+  border: 1px solid transparent;
+  background: url('../images/funnel-fill.svg');
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  background: url('../images/funnel.svg');
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+  background-color: #00000020;
+  color: var(--bs-dark);
+  padding: 8px 8px;
+  /* border: 1px solid #00000040;
+  border-top: none; */
+  border-radius: 0.2rem;
+  cursor: pointer;
+  
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  border-radius: 0.25rem;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+/* Tint itens on mouse hover */
+.select-items div:hover, .same-as-selected {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-left: 2px solid grey;
 }
