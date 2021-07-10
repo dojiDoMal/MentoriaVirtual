@@ -27,7 +27,7 @@
   --bs-primary: #0d6efd;
   --bs-secondary: #6c757d;
   --bs-success: #198754;
-  --bs-info: ;
+  --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
@@ -69,6 +69,15 @@ hr.style-three {
   height: 1px;
   background: #495057;
   background-image: linear-gradient(to right, #333, #495057, #333);
+}
+
+.contact-img {
+  margin-top: 2rem;
+  object-fit: cover;
+  height: 21rem;
+  width: 35rem;
+  border: 1px solid var(--bs-info);
+  border-radius: 0.1rem;
 }
 
 .root {
@@ -11180,7 +11189,6 @@ textarea.form-control-lg {
   border-radius: 0.2rem;
   width: 200px;
   position: relative;
-  font-family: Arial;
 }
 
 .custom-select select {
