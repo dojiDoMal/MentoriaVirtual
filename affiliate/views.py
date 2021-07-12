@@ -10,13 +10,12 @@ EMAIL = os.environ.get('EMAIL')
 
 def home(request):
     courses = Course.objects.all()
-
     #orders = courses.order_set.all()
     #order_count = orders.count()
 
     filter = CourseFilter(request.GET, queryset=courses)
     courses = filter.qs
-
+    
     context = {"courses": courses, 'filter': filter}
     return render(request, 'home.html', context)
 

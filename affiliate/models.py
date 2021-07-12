@@ -1,6 +1,9 @@
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
 from django.conf import settings
+from django.db.models.deletion import DO_NOTHING
 from django.db.models.fields import DecimalField
+from django.db.models.fields.files import ImageField
 from mptt.models import MPTTModel, TreeForeignKey
 
 # class Comment(MPTTModel):
@@ -33,6 +36,12 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+class Ad(models.Model):
+    course = models.ForeignKey('Course', related_name="ads", on_delete=models.CASCADE)
+    ad_image = models.ImageField(upload_to='ad/img/%Y/%m/%d/')
+    ad_video = models.FileField(upload_to='ad/video/%Y/%m/%d/')
+    ad_text = models.TextField(max_length=2500, null=True)
+
 class Course(models.Model):
     # transformar o desconto em um field?
     name = models.CharField(max_length=200)
@@ -41,26 +50,16 @@ class Course(models.Model):
     summary = models.TextField(max_length=140, null=True, blank=False)
     rating = models.FloatField(default=0)
     price = models.DecimalField(default=0, max_digits=6, decimal_places=2)
-    category = models.ForeignKey('Category', models.SET_NULL, null=True)  
+    category = models.ForeignKey('Category', on_delete=models.SET_NULL, null=True)
     author = models.CharField(max_length=100)
     link = models.URLField(max_length=200, default='#')
     discount = models.IntegerField(default=0)
-        
-    def count_popular_vote(self, like_boolean):
-        return self.popular_vote_set.filter(like=like_boolean).count()
 
-    def count_dislikes(self):
-        return self.count_popular_vote(False)
-
-    def count_likes(self):
-        return self.count_popular_vote(True)
+    class Meta:
+        ordering = ['-rating']
 
     def get_absolute_url(self):
         return "/course/%i/" % self.id
-
-    def get_approval_rate(self):
-        sum = self.count_likes() + self.count_dislikes()
-        return self.count_likes()/sum*100 if sum > 0 else 0
 
     def get_price_with_discount(self):
         price = float(self.price) * (1-(self.discount/100))
@@ -77,4 +76,3 @@ class Evaluation(models.Model):
 
     class Meta:
         ordering = ('-evaluation_rating',)
-# Create your models here.

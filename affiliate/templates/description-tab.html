@@ -1,4 +1,17 @@
 {% load static %}
 
+{% for ad in course.ads.all %}
+    <div>
+        <img height="320" src="{{ad.ad_image.url}}" alt="...">
+    </div>
+    <div>
+        <video width="320" height="240" controls>
+            <source src="{{ad.ad_video.url}}" type="video/mp4">
+        </video>
+    </div>
+    <div>
+        <p>{{ad.ad_text}}</p>
+    </div>
+{% endfor %}
 <!-- TODO: fazer um template com uma descrição interessante-->
-{{ course.description }}
+    
