@@ -176,3 +176,22 @@ function closeAllSelect(elmnt) {
 /* If the user clicks anywhere outside the select box,
 then close all select boxes: */
 document.addEventListener("click", closeAllSelect);
+
+function parser(){
+  // Get all the elements that you care about into an array
+  let elements = Array.prototype.slice.call(document.querySelectorAll("p"));
+
+  // Loop over the items in the array
+  elements.forEach(function(el){
+    // Do the replace on the element
+    el.innerHTML = el.innerHTML
+                    .replace(/(repudiandae|oferta|surpresa|bônus|promocional|compre|parcele|parcelado|imediato|exclusivo|esclusivos)/ig, "<span class='text-danger'>$1</span>")
+                    .replace(/(optio|e-book|ebook|lucrar|lucro|especiais|suporte|especial|digital|dinheiro|treinamento|WhatsApp|online)/ig, "<span class='text-success'>$1</span>")
+                    .replace(/(ipsum|zero|garantir|garantia|principal|principais|guia|vida|certificado|certificados|boleto|aprenda|melhor|mentorias|mentoria|metodologia)/ig, "<strong>$1</strong>")
+                    .replace(/(elit|resultado|resultados|você|transformação|semanas|dias|profissional|completo|curso|aulas|pagamento)/ig, "<em>$1</em>");
+  });
+}
+
+if(document.URL.includes('detail')){
+  parser()
+}

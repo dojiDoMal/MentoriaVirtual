@@ -38,7 +38,9 @@ class Category(models.Model):
 
 class Ad(models.Model):
     course = models.ForeignKey('Course', related_name="ads", on_delete=models.CASCADE)
+    ad_image_title = models.CharField(max_length=50)
     ad_image = models.ImageField(upload_to='ad/img/%Y/%m/%d/')
+    ad_video_title = models.CharField(max_length=50)
     ad_video = models.FileField(upload_to='ad/video/%Y/%m/%d/')
     ad_text = models.TextField(max_length=2500, null=True)
 
