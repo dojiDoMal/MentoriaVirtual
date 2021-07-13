@@ -1,17 +1,36 @@
 {% load static %}
 
-{% for ad in course.ads.all %}
-    <div>
-        <img height="320" src="{{ad.ad_image.url}}" alt="...">
-    </div>
-    <div>
-        <video width="320" height="240" controls>
-            <source src="{{ad.ad_video.url}}" type="video/mp4">
-        </video>
-    </div>
-    <div>
-        <p>{{ad.ad_text}}</p>
-    </div>
-{% endfor %}
-<!-- TODO: fazer um template com uma descrição interessante-->
+<div class='container pt-4'>
+    {% if not course.ads.all %}
+        ...
+    {% else %}
+        {% for ad in course.ads.all %}
+            {% if ad.ad_image %}
+                <div class='row mb-5 heading-frame'>
+                    <img class='col-3' src="{{ad.ad_image.url}}" alt="...">
+                    <p class='col-9 display-8'>{{course.description}}</p>
+                </div>
+            {% endif %}
+            {% if ad.ad_video %}
+                <div class="darkgray-bg jagged-border">
+                </div>
+                <div class='heading-frame'>
+                    <video class="border-shadow" controls>
+                        <source src="{{ad.ad_video.url}}" type="video/mp4">
+                    </video>
+                </div>
+                <div class="darkgray-bg jagged-border" style="transform: rotate(0deg)">
+                </div>
+            {% else %}
+                <hr>
+            {% endif %}
+            {% if ad.ad_text %}
+                <div class='mt-4 mb-4'>
+                    <p class='display-7 text-center'>{{ad.ad_text}}</p>
+                </div>
+                <hr>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</div>
     
