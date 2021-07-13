@@ -8,4 +8,34 @@
     exiba um texto diferente.
     Pensar em outras informações.
 {% endcomment %}
-Olá Mundo!
+<div class='container'>
+    <div class='display-8 text-center mb-3'>
+        Ainda está em dúvida ou precisa de alguma informação a mais? Nós te ajudamos!
+    </div>
+    {% if course.discount > 0%}
+        <div class='pt-5'>{{ course.name }} está com um desconto super especial de <span class='text-danger bg-warning'>{{ course.discount }}%</span>
+        <br>
+        Aproveite agora mesmo essa oferta por tempo limitado e garanta essa oportunidade de aprendizado.
+        <br>
+        Comprando hoje, <em>{% now "d \d\e F" %}</em>, você economiza um total de R$ {{ course.get_saving }}.
+        </div>
+    {% endif %}
+    {% if course.get_rating > 5%}
+        <div class='pt-5'>
+            Este curso está entre os mais bem avaliados da categoria <strong>{{ course.category }}</strong>.
+            <br>
+            Mais de <strong>{{ course.evaluations.all.count }}</strong> pessoas avaliaram este curso.
+            <br>
+            Um curso com uma avaliação alta 🔥 significa que seu conteúdo tem qualidade garantida e que os alunos não só aprovam
+            como também recomendam que outras pessoas adquiram-no.
+        </div>
+    {% endif %}
+        <div class='pt-5'>
+            <strong>Como posso saber se esse curso vale a pena pra mim?</strong>
+            <br>
+            Esse curso é recomendado para quem quer se aprofundar em um assunto ou desenvolver uma nova habilidade, 
+            seja um hobby ou uma paixão, assim como também para quem quer transformar essa paixão em algo lucrativo.
+            <br>
+            Se você se encaixa em algum desses requisitos, saiba que esse curso vale a pena sim pra você ;)
+        </div>
+</div>

@@ -67,6 +67,10 @@ class Course(models.Model):
         price = float(self.price) * (1-(self.discount/100))
         return "{:.2f}".format(price).replace(".",",") 
     
+    def get_saving(self):
+        new_price = float(self.price) * (1-(self.discount/100))
+        return "{:.2f}".format(float(self.price) - new_price).replace(".", ",") 
+
     def get_rating(self):
         return int(self.rating*20)
 
