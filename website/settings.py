@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'affiliate.apps.AffiliateConfig',
     'hcaptcha',
     'crispy_forms',
-    'mptt',
     'django_filters',
 ]
 

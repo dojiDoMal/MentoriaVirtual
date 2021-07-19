@@ -8,7 +8,6 @@ staticfiles
 _config.yml
 .env
 /media
-#myvenv
 #locale/*/LC_MESSAGES/django.mo
 #bin/
 #include/

@@ -1,0 +1,1 @@
+{% extends 'navbar.min.html' %} {% load static %}{% block content %}<center> {% if searched %}<h1 class="h3 my-4"> Exibindo resultados para "{{ searched }}"</h1> {% include 'card.min.html' %} {% else %}<h1> Você não passou o parametro de busca...</h1> {% endif %}<center> {% endblock content %}

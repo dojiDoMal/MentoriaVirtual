@@ -1,0 +1,1 @@
+{% load static %} {% load crispy_forms_tags %}{% block filter %}<form method="GET"> {% csrf_token %}<div class="container"><div id="category-form" class="form-row"><div class="form-group col-10"></div><div class="form-group col-2"> {{ filter.form | crispy }}</div></div></div></form> {% endblock filter %}
