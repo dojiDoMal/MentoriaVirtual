@@ -1,34 +1,5 @@
 from django.db import models
-from django.contrib.postgres.fields import ArrayField
-from django.conf import settings
-from django.db.models.deletion import DO_NOTHING
-from django.db.models.fields import DecimalField
-from django.db.models.fields.files import ImageField
-from mptt.models import MPTTModel, TreeForeignKey
 
-# class Comment(MPTTModel):
-#     course = models.ForeignKey('Course', on_delete=models.PROTECT)
-#     raw_comment = models.TextField()
-#     parent = TreeForeignKey('self',
-#                             related_name='children',
-#                             null=True,
-#                             blank=True,
-#                             db_index=True,
-#                             on_delete=models.PROTECT
-#                             )
-#     date = models.DateTimeField()
-#     comment_phase = models.PositiveSmallIntegerField()
-#     deleted = models.BooleanField(default=False)
-#     ip = models.CharField(max_length=20, null=True)
-#     edited = models.BooleanField(default=False)
-
-#     class MPTTMeta:
-#         order_insertion_by = ['-date']
-
-#     def log_msg(self):
-#         msg = "id: {0}, course: {1} - {2}, author: {3}, raw_comment: {4}, parent: {5}, date: {6}, comment_phase: {7}, deleted: {8}, ip: {9}"
-#         msg = msg.format(str(self.pk), self.course.pk, self.course.title, self.author, self.raw_comment, self.parent, self.date, self.comment_phase, self.deleted, self.ip)
-#         return msg
 
 class Category(models.Model):
     name = models.CharField(max_length=50)
@@ -56,6 +27,7 @@ class Course(models.Model):
     author = models.CharField(max_length=100)
     link = models.URLField(max_length=200, default='#')
     discount = models.IntegerField(default=0)
+    pain_point = models.TextField(max_length=500, null=True)
 
     class Meta:
         ordering = ['-rating']

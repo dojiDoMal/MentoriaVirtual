@@ -2,26 +2,50 @@
 
 <!-- TODO: Criar um template interessante para as informações -->
 {% comment %} 
-    Inserir if's para course.discount, para que de acordo com o desconto
-    exiba um texto diferente.
-    Inseris if's também para course.rating, para que de acordo com cada course.rating
-    exiba um texto diferente.
     Pensar em outras informações.
 {% endcomment %}
 <div class='container'>
     <div class='display-8 text-center mb-3'>
         Ainda está em dúvida ou precisa de alguma informação a mais? Nós te ajudamos!
     </div>
+    {% if course.pain_point %}
+        <div class='pt-5'>
+            <strong>O que posso desenvolver com esse curso?</strong>
+            <br>
+            {{ course.pain_point }}
+        </div>
+    {% endif %}
+    <div class='pt-5'>
+            <strong>Eu tenho alguma garantia ou direito a reembolso?</strong>
+            <br>
+            <ul>
+                <li>
+                Para compras feitas através de boleto ou débito bancário, o prazo para que o valor esteja disponível na conta informada é de 7 dias úteis a 
+                partir da data de liberação do reembolso. Sendo assim, se você efetuar uma compra e se sentir insatisfeito com ela, pode solicitar o 
+                cancelamento e reembolso caso esteja dentro do prazo de garantia estipulado.
+                </li>
+                <li>
+                Para compras feitas com cartão de crédito, o valor da compra será estornado na próxima fatura do seu cartão ou na fatura do mês 
+                subsequente, podendo levar de 30 a 60 dias. Esse prazo depende da data de fechamento de sua fatura. Qualquer valor cobrado neste 
+                intervalo de tempo será estornado.
+                </li>
+            </ul>
+        </div>
     {% if course.discount > 0%}
-        <div class='pt-5'>{{ course.name }} está com um desconto super especial de <span class='text-danger bg-warning'>{{ course.discount }}%</span>
-        <br>
-        Aproveite agora mesmo essa oferta por tempo limitado e garanta essa oportunidade de aprendizado.
-        <br>
-        Comprando hoje, <em>{% now "d \d\e F" %}</em>, você economiza um total de R$ {{ course.get_saving }}.
+        <div class='pt-5'>
+            <strong>Quanto eu economizo comprando esse curso?</strong>
+            <br>
+            {{ course.name }} está com um desconto super especial de <span class='text-danger bg-warning'>{{ course.discount }}%</span>
+            <br>
+            Aproveite agora mesmo essa oferta por tempo limitado e garanta essa oportunidade de aprendizado.
+            <br>
+            Comprando hoje, <em>{% now "d \d\e F" %}</em>, você economiza um total de R$ {{ course.get_saving }}.
         </div>
     {% endif %}
     {% if course.get_rating > 5%}
         <div class='pt-5'>
+            <strong>Como garanto que estarei adquirindo um produto de qualidade?</strong>
+            <br>
             Este curso está entre os mais bem avaliados da categoria <strong>{{ course.category }}</strong>.
             <br>
             Mais de <strong>{{ course.evaluations.all.count }}</strong> pessoas avaliaram este curso.
@@ -31,7 +55,7 @@
         </div>
     {% endif %}
         <div class='pt-5'>
-            <strong>Como posso saber se esse curso vale a pena pra mim?</strong>
+            <strong>Esse curso realmente vale a pena pra mim?</strong>
             <br>
             Esse curso é recomendado para quem quer se aprofundar em um assunto ou desenvolver uma nova habilidade, 
             seja um hobby ou uma paixão, assim como também para quem quer transformar essa paixão em algo lucrativo.
