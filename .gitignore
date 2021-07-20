@@ -5,7 +5,7 @@ db.sqlite3
 staticfiles
 .DS_Store
 *bkp*
-_config.yml
+.travis.yml
 .env
 /*/media
 website_prod/media
