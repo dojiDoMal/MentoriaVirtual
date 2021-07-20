@@ -7,6 +7,8 @@ staticfiles
 *bkp*
 _config.yml
 .env
+/*/media
+website_prod/media
 media/
 #locale/*/LC_MESSAGES/django.mo
 #bin/
